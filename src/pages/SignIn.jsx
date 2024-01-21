@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React,{ useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from '../context/AuthContext';
+
 
 function SignIn() {
+  const {login} = useContext (AuthContext);
+  function handleSubmit(e) {
+    e.preventDefault();
+    login();
+  }
+
   return (
     <>
       <h1>Inloggen</h1>
